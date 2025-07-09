@@ -1,26 +1,23 @@
-# 🛰️ Lunar Lander PPO - Agente Adaptativo
+# Lunar Lander PPO - Agente Adaptativo
 
-Este projeto implementa um agente de aprendizado por reforço profundo (Deep RL) utilizando o algoritmo **PPO (Proximal Policy Optimization)** para controlar uma nave no ambiente `LunarLander-v3`, com múltiplas etapas de dificuldade crescente. O agente aprende a realizar pousos suaves e eficientes por meio de um currículo adaptativo.
+Este projeto implementa um agente de aprendizado por reforço profundo (Deep Reinforcement Learning) utilizando o algoritmo **PPO (Proximal Policy Optimization)** para controlar uma nave no ambiente `LunarLander-v3`. O agente é treinado com múltiplas etapas de dificuldade crescente por meio de um currículo adaptativo, permitindo pousos suaves e eficientes em cenários cada vez mais desafiadores.
 
----
+## Estrutura do Projeto
 
-## 📂 Estrutura do Projeto
+- `treinamento.py`: Script de treinamento com currículo adaptativo e progressão dinâmica de dificuldade.
+- `agente.py`: Script de avaliação e teste do modelo treinado, com visualização, análise estatística e geração de gráficos.
 
-- `treinamento.py`: Script de treinamento com curriculum learning e mudanças dinâmicas de dificuldade.
-- `agente.py`: Script de avaliação e teste do modelo treinado com visualização, análise e gráficos.
+## Características Técnicas
 
----
+### Aprendizado com Currículo Adaptativo
 
-## 🚀 Características
+O script de treinamento aplica quatro fases distintas:
+1. **Fase Inicial**: Ambiente padrão com semente fixa.
+2. **Generalização**: Ativação de sementes aleatórias ao atingir recompensa média ≥ 200.
+3. **Modo Difícil**: Introdução de instabilidades físicas quando a média atinge ≥ 240.
+4. **Refino**: Penalidade por número de passos ativada ao atingir média ≥ 260.
 
-### 🎓 Aprendizado com Currículo Adaptativo
-O script de treinamento aplica três fases:
-1. **Fase Inicial**: Ambiente padrão com seed fixa.
-2. **Fase de Generalização**: Ativa seed aleatória ao atingir recompensa média ≥ 200.
-3. **Modo Difícil**: Introduz instabilidades físicas quando recompensa ≥ 240.
-4. **Refino**: Penalidade por passos ativada ao atingir ≥ 260.
-
-### 🧠 Arquitetura do Modelo
+### Arquitetura do Modelo
 
 ```python
 ActorCriticPolicy(
@@ -28,62 +25,62 @@ ActorCriticPolicy(
     policy_net:  [8 → 64 → 64]
     value_net:   [8 → 64 → 64]
 )
-Parâmetros totais: 9.797
+# Total de parâmetros: 9.797
+```
 
-📊 Resultados
-✅ Desempenho final (teste com 50 episódios)
+## Resultados
 
-    Taxa de sucesso: 94.0% (47/50)
+### Avaliação Final (50 episódios)
 
-    Recompensa média: 274.70 ± 51.71
+- **Taxa de sucesso:** 94.0% (47/50)
+- **Recompensa média:** 274.70 ± 51.71
+- **Recompensa máxima:** 322.00
+- **Pousos suaves:** 50/50
+- **Tempo médio por episódio:** 5.54s
+- **Velocidade vertical média:** 0.00
+- **Ângulo médio:** 0.01 rad
 
-    Recompensa máxima: 322.00
+Gráfico de desempenho salvo como `performance_graph.png`.
 
-    Pousos suaves: 50/50
+### Dados do Treinamento Final
 
-    Tempo médio por episódio: 5.54s
+- **Timesteps totais:** 12.000.000
+- **Recompensa média (últimos 10 episódios):** 288.83
+- **Recompensa avaliada:** 262.77 ± 36.83
+- **Explained Variance:** 0.998
+- **Entropy Loss:** -0.228
+- **FPS:** 28
 
-    Velocidade vertical média: 0.00
+## Execução
 
-    Ângulo médio: 0.01 rad
+### Requisitos
 
-Gráfico de desempenho salvo como: performance_graph.png
-🧪 Treinamento Final
+- Python 3.10+
+- stable-baselines3
+- gymnasium
+- matplotlib
+- numpy
 
-    Timesteps: 12.000.000
+### Treinar o modelo
 
-    Recompensa média (últimos 10): 288.83
-
-    Recompensa avaliada: 262.77 ± 36.83
-
-    Explained Variance: 0.998
-
-    Entropy Loss: -0.228
-
-    FPS: 28
-
-▶️ Como usar
-📦 Requisitos
-
-    Python 3.10+
-
-    stable-baselines3
-
-    gymnasium
-
-    matplotlib
-
-    numpy
-
-🏋️‍♂️ Treinamento
-
+```bash
 python treinamento.py
+```
 
-🎮 Avaliação do agente
+### Avaliar o agente
 
+```bash
 python agente.py
+```
 
-👨‍💻 Autor
+## Acesso ao Modelo
 
-Raul Campos Nascimento
-📧 rautopiaa@gmail.com
+Os pesos treinados do agente estão disponíveis no Hugging Face:
+
+**Hugging Face Hub:**  
+https://huggingface.co/rautopia/ppo-lunar-lander-v3-max322
+
+## Autor
+
+**Raul Campos Nascimento**  
+Email: rautopiaa@gmail.com
