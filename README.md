@@ -1,15 +1,29 @@
-# 🚀 Lunar Lander PPO — Currículo Adaptativo (Recorde Mundial) 🏆
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
-[![Stable-Baselines3](https://img.shields.io/badge/Stable--Baselines3-PPO-orange)](https://stable-baselines3.readthedocs.io/)
-[![Gymnasium](https://img.shields.io/badge/Gymnasium-LunarLander--v3-lightgrey?logo=openai)](https://gymnasium.farama.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+# 🚀 Lunar Lander PPO — Currículo Adaptativo 🏆  
+### Recorde Mundial no LunarLander-v3
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Stable-Baselines3](https://img.shields.io/badge/Stable--Baselines3-PPO-FF6F00)](https://stable-baselines3.readthedocs.io/)
+[![Gymnasium](https://img.shields.io/badge/Gymnasium-LunarLander--v3-009688)](https://gymnasium.farama.org/)
+[![Hugging Face Model](https://img.shields.io/badge/HuggingFace-Modelo-FCC624?logo=huggingface)](https://huggingface.co/rautopia/ppo-lunar-lander-v3-max322)
+[![Hugging Face Demo](https://img.shields.io/badge/HuggingFace-Demo-blue?logo=huggingface)](https://huggingface.co/spaces/rautopia/lunar-lander-ppo-demo-322)
+[![License: MIT](https://img.shields.io/badge/License-MIT-4CAF50.svg)](LICENSE)  
 [![Status](https://img.shields.io/badge/Status-Ativo-brightgreen)](#)
 [![Stars](https://img.shields.io/github/stars/RaulCN/lunar_lander_ppo_recorde_mundial?style=social)](https://github.com/RaulCN/lunar_lander_ppo_recorde_mundial/stargazers)
 [![Downloads](https://img.shields.io/github/downloads/RaulCN/lunar_lander_ppo_recorde_mundial/total?label=Downloads)](https://github.com/RaulCN/lunar_lander_ppo_recorde_mundial/releases)
-[![Hugging Face](https://img.shields.io/badge/Model-HuggingFace-yellow?logo=huggingface)]([https://huggingface.co/seu-link-aqui](https://huggingface.co/rautopia/ppo-lunar-lander-v3-max322))
 
-> **Agente PPO com currículo adaptativo** que alcança desempenho de ponta no desafio *LunarLander-v3*, com resultados consistentes e robustos.
+---
+
+🎯 **Agente PPO com currículo adaptativo** que alcança desempenho de ponta no desafio `LunarLander-v3`,  
+com pousos consistentes, robustos e otimizados para diferentes níveis de dificuldade.
+
+---
+
+<img src="gif/seed5.gif" alt="Demonstração do agente Lunar Lander PPO" width="650"/>
+
+</div>
+
 
 Este projeto implementa um agente de aprendizado por reforço profundo (Deep Reinforcement Learning) utilizando o algoritmo **PPO (Proximal Policy Optimization)** para controlar uma nave no ambiente `LunarLander-v3`. O agente é treinado com múltiplas etapas de dificuldade crescente por meio de um currículo adaptativo, permitindo pousos suaves e eficientes em cenários cada vez mais desafiadores.
 
